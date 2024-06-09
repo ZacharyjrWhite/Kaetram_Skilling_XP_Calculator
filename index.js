@@ -167,7 +167,7 @@
                 return;
             }
 
-            const { requiredResources } = calculateResources(currentXp, targetLevel, bonusPerResource, xpGivenPerResource);
+            let { requiredResources } = calculateResources(currentXp, targetLevel, bonusPerResource, xpGivenPerResource);
 
 	    requiredResources = requiredResources === undefined ? 0 : requiredResources;
 		
