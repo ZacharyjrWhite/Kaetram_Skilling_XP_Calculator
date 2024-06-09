@@ -132,7 +132,7 @@
             return { level: xpTable[xpTable.length - 1].level, remainingXp: 0 };
         }
 
-        function calculateResources(currentXp, targetLevel, xpGivenPerResource) {
+        function calculateResources(currentXp, targetLevel, bonusPerResource, xpGivenPerResource) {
             const { level: currentLevel, remainingXp } = getLevelByXp(currentXp);
             
             if (currentLevel >= targetLevel || targetLevel > 120) {
@@ -144,7 +144,13 @@
             for (let i = currentLevel + 1; i < targetLevel; i++) {
                 totalXpNeeded += xpTable[i - 1].xpToNext;
             }
-
+            
+            if(bonusPerResource > 0){
+            	xpGivenPerResource = Math.floor(xpGivenPerResource * (1 + (bonusPerResource / 100)));
+            }
+            
+            document.getElementById("perResource").innerHTML = `XP Per Resource: ${xpGivenPerResource}`;
+						
             let requiredResources = Math.ceil(totalXpNeeded / xpGivenPerResource);
 						
             return { requiredResources };
@@ -153,6 +159,7 @@
         function handleCalculate() {
             const currentXp = parseInt(document.getElementById("currentXp").value);
             const targetLevel = parseInt(document.getElementById("targetLevel").value);
+            const bonusPerResource = parseInt(document.getElementById("bonusExp").value);
             const xpGivenPerResource = parseInt(document.getElementById("xpGivenPerResource").value);
 
             if (isNaN(currentXp) || isNaN(targetLevel) || isNaN(xpGivenPerResource)) {
@@ -160,7 +167,7 @@
                 return;
             }
 
-            const { requiredResources } = calculateResources(currentXp, targetLevel, xpGivenPerResource);
+            const { requiredResources } = calculateResources(currentXp, targetLevel, bonusPerResource, xpGivenPerResource);
             
             document.getElementById("result").innerHTML = `Resources required to level: ${requiredResources}`;
         }
