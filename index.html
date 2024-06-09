@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monster Kill Calculator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+</head>
+<body>
+    <h1>Skilling Calculator</h1>
+    <label for="currentXp">Current XP:</label>
+    <input type="number" id="currentXp" min="0" required>
+    <br>
+    <label for="targetLevel">Target Level:</label>
+    <input type="number" id="targetLevel" min="2" max="120" required>
+    <br>
+    <label for="mobHp">XP given per resounce:</label>
+    <input type="number" id="xpGivenPerResource" min="1" required>
+    <br>
+    <button onclick="handleCalculate()">Calculate</button>
+    <p id="perKill"></p>
+    <p id="result"></p>
+    <script src="index.js"></script>
+</body>
+</html>
