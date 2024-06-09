@@ -66,6 +66,24 @@
             margin-top: 20px;
             font-size: 1.2em;
         }
+
+        .socials{
+          padding: 5px;
+          display: flex;
+          flex-direction: row;
+        }
+        .socials a{
+          background: none;
+        }
+        .social-icon:hover img {
+            transform: scale(1.2);
+        }
+        .social-icon img {
+            height: 50px;
+            width: 50px;
+            border-radius: 10px;
+            transition: all .4s ease-out;
+        }
     </style>
 </head>
 <body>
@@ -85,6 +103,14 @@
              <a href="https://zacharyjrwhite.github.io/Kaetram_Mob_XP_Calculator/">Mob XP Calculator</a>
             <p id="perResource"></p>
             <p id="result"></p>
+        </div>
+    </div>
+    <div class="socials">
+        <div class="flex flex-row socials" style="justify-content: center; margin-bottom: 25px;">
+        <div class="social-icon"><a href="https://kaetram.com" rel="nofollow"><img alt="Kaetram.png" src="https://kaetram.wiki.gg/images/f/f7/Kaetram.png" decoding="async" loading="lazy" width="128" height="128"></a></div>
+        <div class="social-icon"><a href="https://discord.com/invite/kaetram" rel="nofollow"><img alt="Discord.png" src="https://kaetram.wiki.gg/images/d/dd/Discord.png" decoding="async" loading="lazy" width="512" height="511"></a></div>
+        <div class="social-icon"><a href="https://www.youtube.com/channel/UC0atP4sQbb4LJd6y4jijOHg" rel="nofollow"><img alt="Youtube.png" src="https://kaetram.wiki.gg/images/a/af/Youtube.png" decoding="async" loading="lazy" width="1024" height="1024"></a></div>
+        <div class="social-icon"><a href="https://www.patreon.com/kaetram" rel="nofollow"><img alt="Patreon.jpg" src="https://kaetram.wiki.gg/images/b/b1/Patreon.jpg" decoding="async" loading="lazy" width="275" height="275"></a></div>
         </div>
     </div>
     <script src="index.js"></script>
