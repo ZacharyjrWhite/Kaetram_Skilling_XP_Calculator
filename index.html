@@ -5,24 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monster Kill Calculator</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 400px;
+            gap: 10px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 1em;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 1em;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        p {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
 </head>
 <body>
     <h1>Skilling Calculator</h1>
-    <label for="currentXp">Current XP:</label>
-    <input type="number" id="currentXp" min="0" required>
-    <br>
-    <label for="targetLevel">Target Level:</label>
-    <input type="number" id="targetLevel" min="2" max="120" required>
-    <br>
-    <label for="bonusExp">Bonus XP %:</label>
-    <input type="number" id="bonusExp" min="0" max="100" value="0" required>
-    <br>
-    <label for="mobHp">XP given per resounce:</label>
-    <input type="number" id="xpGivenPerResource" min="1" required>
-    <br>
-    <button onclick="handleCalculate()">Calculate</button>
-    <p id="perResource"></p>
-    <p id="result"></p>
+    <div class="container">
+        <label for="currentXp">Current XP:</label>
+        <input type="number" id="currentXp" min="0" required>
+        <br>
+        <label for="targetLevel">Target Level:</label>
+        <input type="number" id="targetLevel" min="2" max="120" required>
+        <br>
+        <label for="bonusExp">Bonus XP %:</label>
+        <input type="number" id="bonusExp" min="0" max="100" value="0" required>
+        <br>
+        <label for="mobHp">XP given per resounce:</label>
+        <input type="number" id="xpGivenPerResource" min="1" required>
+        <br>
+        <button onclick="handleCalculate()">Calculate</button>
+        <p id="perResource"></p>
+        <p id="result"></p>
+    </div>
     <script src="index.js"></script>
 </body>
 </html>
