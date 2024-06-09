@@ -12,18 +12,22 @@
             align-items: center;
             justify-content: center;
             font-family: Arial, sans-serif;
+            background: url("https://kaetram.wiki.gg/images/8/84/Site_background.png")
         }
 
         h1 {
-            margin-bottom: 20px;
+            margin: 0;
+            text-align: center;
         }
 
-        .container {
+        .content {
             display: flex;
             flex-direction: column;
-            width: 100%;
-            max-width: 400px;
             gap: 10px;
+            border-image: url("https://kaetram.wiki.gg/images/9/9a/Container.png");
+            border-image-slice: calc(50 / 184 * 100%) calc(80 / 284 * 100%) fill;
+            border-image-width: 16px 16px;
+            padding: 20px;
         }
 
         label {
@@ -34,7 +38,7 @@
             padding: 10px;
             font-size: 1em;
         }
-        
+
         button, a{
             padding: 10px;
             font-size: 1em;
@@ -68,18 +72,20 @@
     <div class="container">
         <img src="https://kaetram.wiki.gg/images/e/e6/Site-logo.png">
         <h1>Skilling Calculator</h1>
-        <label for="currentXp">Current XP:</label>
-        <input type="number" id="currentXp" min="0" required>
-        <label for="targetLevel">Target Level:</label>
-        <input type="number" id="targetLevel" min="2" max="120" required>
-        <label for="bonusExp">Bonus XP %:</label>
-        <input type="number" id="bonusExp" min="0" max="100" value="0" required>
-        <label for="xpGivenPerResource">XP given per resounce:</label>
-        <input type="number" id="xpGivenPerResource" min="1" required>
-        <button onclick="handleCalculate()">Calculate</button>
-         <a href="https://zacharyjrwhite.github.io/Kaetram_Mob_XP_Calculator/">Mob XP Calculator</a>
-        <p id="perResource"></p>
-        <p id="result"></p>
+        <div class="content">
+            <label for="currentXp">Current XP:</label>
+            <input type="number" id="currentXp" min="0" required>
+            <label for="targetLevel">Target Level:</label>
+            <input type="number" id="targetLevel" min="2" max="120" required>
+            <label for="bonusExp">Bonus XP %:</label>
+            <input type="number" id="bonusExp" min="0" max="100" value="0" required>
+            <label for="xpGivenPerResource">XP given per resounce:</label>
+            <input type="number" id="xpGivenPerResource" min="1" required>
+            <button onclick="handleCalculate()">Calculate</button>
+             <a href="https://zacharyjrwhite.github.io/Kaetram_Mob_XP_Calculator/">Mob XP Calculator</a>
+            <p id="perResource"></p>
+            <p id="result"></p>
+        </div>
     </div>
     <script src="index.js"></script>
 </body>
