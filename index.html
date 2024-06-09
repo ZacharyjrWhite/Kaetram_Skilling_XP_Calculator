@@ -14,12 +14,14 @@
     <label for="targetLevel">Target Level:</label>
     <input type="number" id="targetLevel" min="2" max="120" required>
     <br>
+    <label for="bonusExp">Bonus XP %:</label>
+    <input type="number" id="bonusExp" min="0" max="100" value="0" required>
+    <br>
     <label for="mobHp">XP given per resounce:</label>
     <input type="number" id="xpGivenPerResource" min="1" required>
     <br>
     <button onclick="handleCalculate()">Calculate</button>
-    <p id="perKill"></p>
+    <p id="perResource"></p>
     <p id="result"></p>
-    <script src="index.js"></script>
 </body>
 </html>
