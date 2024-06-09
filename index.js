@@ -168,6 +168,8 @@
             }
 
             const { requiredResources } = calculateResources(currentXp, targetLevel, bonusPerResource, xpGivenPerResource);
-            
+
+	    requiredResources = requiredResources === undefined ? 0 : requiredResources;
+		
             document.getElementById("result").innerHTML = `Resources required to level: ${requiredResources}`;
         }
