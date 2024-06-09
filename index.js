@@ -173,3 +173,7 @@
 		
             document.getElementById("result").innerHTML = `Resources required to level: ${requiredResources}`;
         }
+
+	function visits(data) {
+	    document.getElementById('visits').innerText = data.value;
+	}
